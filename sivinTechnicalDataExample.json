@@ -1,0 +1,51 @@
+carrosserie: BERLINE
+carrosserieCG: CI
+co2: '104'
+codeMoteur: 1NZFXE
+codifVin: JTDKB20U703189326
+consExurb: '4.2'
+consMixte: '4.3'
+consUrb: '5.0'
+couleurVehic: GRIS
+cylindree: '1497'
+date1erCir: '2006-11-02 00:00:00'
+dateDCG: '2011-07-05 00:00:00'
+depollution: NON
+empat: '270'
+energie: ESS+ELEC HNR
+genreV: VP
+genreVCG: VP
+hauteur: '149'
+immatSiv: BR254AQ
+largeur: '173'
+longueur: '445'
+marque: TOYOTA
+marqueCarros: TOYOTA
+modeInject: AUTR. CARBURATIONS
+modele: PRIUS
+modeleEtude: PRIUS
+modelePrf: PRIUS
+nSerie: 03189326
+nSiren: '000000000'
+nbCylind: '4'
+nbPlAss: '5'
+nbPortes: '5'
+nbSoupape: '4'
+nbVitesse: '6'
+nbVolume: '1'
+poidsVide: '1300'
+prixVehic: '27475'
+propulsion: AVANT
+ptr: '1725'
+ptrPrf: ''
+puisCh: '77'
+puisFisc: '4'
+puisKw: '57'
+tpBoiteVit: VARIAT.ME
+turboCompr: NON TURBO
+type: MJT9162TE537
+typeVarVersPrf: HW2NHW20(E)NHW20L-AHEEBW(1C)
+typeVinCG: KB20U7
+version: '1.5'
+pneus:
+  Dimension: 195/55 R16 87 V
