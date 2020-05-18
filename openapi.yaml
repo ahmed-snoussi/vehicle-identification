@@ -150,7 +150,7 @@ components:
   examples:
     sivinTechnicalData:
       value:
-        "$ref": "/sivinTechnicalDataExample.json"
+        "$ref": "./sivinTechnicalDataExample.json"
 security:
   - openId:
       - read
