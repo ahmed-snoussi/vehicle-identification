@@ -1,0 +1,235 @@
+{
+  "openapi": "3.0.1",
+  "info": {
+    "title": "Vehicle identification",
+    "description": "The vehicle identification service offers four ways to identify a vehicle : `REGISTRATION` number, `VIN` code, `TYPEMINE` or `CNIT`.",
+    "version": "1.0.0"
+  },
+  "servers": [
+    {
+      "url": "{protocol}://{environment}.autodistribution.com:{port}",
+      "variables": {
+        "protocol": {
+          "enum": [
+            "http",
+            "https"
+          ],
+          "default": "https"
+        },
+        "environment": {
+          "enum": [
+            "api",
+            "api.dev",
+            "api.staging"
+          ],
+          "default": "api"
+        },
+        "port": {
+          "enum": [
+            "443",
+            "80"
+          ],
+          "default": "443"
+        }
+      }
+    }
+  ],
+  "paths": {
+    "/sivin-technical-data/{identifier}": {
+      "get": {
+        "operationId": "getSivinTechnicalData",
+        "summary": "Returns raw sivin data.",
+        "security": [
+          {"openId": ["read"]},
+          {"oAuth2": ["read"]}
+        ],
+        "description": "This endpoint returns SIvin Technical Data. It should be in this format `/sivin-technical-data/{identifier}?identifierType=value[&wording=legacy]`.",
+        "parameters": [
+          {
+            "name": "identifier",
+            "in": "path",
+            "description": "This parameter is used to identify a vehicle. The value of this parameter should be a `REGISTRATION` number or a `VIN`.",
+            "examples": {
+              "registrationNumber": {
+                "summary": "Registration number",
+                "description": "This is an example of a registration number",
+                "value": "BR254AQ"
+              },
+              "VIN": {
+                "summary": "VIN",
+                "description": "This is an example of a VIN (Vehicle Identification Number).",
+                "value": "JTDKB20U703189326"
+              }
+            },
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "identifierType",
+            "in": "query",
+            "description": "This parameter indicates the type of the parameter `identifier`.",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "enum": [
+                "REGISTRATION",
+                "VIN"
+              ]
+            }
+          },
+          {
+            "name": "wording",
+            "in": "query",
+            "description": "If the `wording` value is `legacy`. The service returns the object properties according to the original sivin naming.",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "enum": [
+                "legacy"
+              ]
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/sivinTechnicalDataSchema"
+                },
+                "examples": {
+                  "sivinTechnicalData": {
+                    "$ref": "#/components/examples/sivinTechnicalData"
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "$ref": "#/components/responses/BadRequest"
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthorized"
+          },
+          "403": {
+            "$ref": "#/components/responses/Forbidden"
+          },
+          "404": {
+            "$ref": "#/components/responses/Notfound"
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "sivinTechnicalDataSchema": {
+        "$ref": "sivinTechnicalDataSchema.json"
+      },
+      "Error": {
+        "type": "object",
+        "properties": {
+          "code": {
+            "type": "string"
+          },
+          "message": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "code",
+          "message"
+        ]
+      }
+    },
+    "responses": {
+      "BadRequest": {
+        "description": "The request cannot be fulfilled due to bad syntax.",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/Error"
+            }
+          }
+        }
+      },
+      "Unauthorized": {
+        "description": "The request requires user authentication.",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/Error"
+            }
+          }
+        }
+      },
+      "Forbidden": {
+        "description": "The server understood the request but refuses to authorize it. Access token does not have the required scope",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/Error"
+            }
+          }
+        }
+      },
+      "Notfound": {
+        "description": "The server has not found anything matching the Request-URI.",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/Error"
+            }
+          }
+        }
+      }
+    },
+    "securitySchemes": {
+      "openId": {
+        "type": "openIdConnect",
+        "openIdConnectUrl": "https://poc-ang-autodistribution.eu.auth0.com/.well-known/openid-configuration"
+      },
+      "oAuth2": {
+        "type": "oauth2",
+        "flows": {
+          "authorizationCode": {
+            "authorizationUrl": "https://poc-ang-autodistribution.eu.auth0.com/authorize",
+            "tokenUrl": "https://poc-ang-autodistribution.eu.auth0.com/oauth/token",
+            "scopes": {
+              "read": "Grant read-only access to vehicles data"
+            }
+          },
+          "clientCredentials": {
+            "tokenUrl": "https://poc-ang-autodistribution.eu.auth0.com/oauth/token",
+            "scopes": {
+              "read": "Grant read-only access to vehicles data"
+            }
+          },
+          "password": {
+            "tokenUrl": "https://poc-ang-autodistribution.eu.auth0.com/oauth/token",
+            "scopes": {
+              "read": "Grant read-only access to vehicles data"
+            }
+          }
+        }
+      }
+    },
+    "examples": {
+      "sivinTechnicalData": {
+        "value": {
+          "$ref": "sivinTechnicalDataExample.json"
+        }
+      }
+    }
+  },
+  "security": [
+    {
+      "openId": [
+        "read"
+      ]
+    }
+  ]
+}

@@ -1,2 +1,2 @@
 apiDefinitions:
-  vehicleidentification: openapi.yaml
+  main: openapi.json
