@@ -150,7 +150,7 @@ components:
   examples:
     sivinTechnicalData:
       value:
-        "$ref": "/sivinTechnicalDataExample.yaml"
+        "$ref": "./sivinTechnicalDataExample.yaml"
 security:
   - openId:
       - read
