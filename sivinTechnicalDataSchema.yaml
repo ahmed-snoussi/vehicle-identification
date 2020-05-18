@@ -1,0 +1,208 @@
+title: sivinTechnicalData
+type: object
+properties:
+  carrosserie:
+    type: string
+    example: BERLINE
+  carrosserieCG:
+    type: string
+    example: CI
+  co2:
+    type: string
+    example: '104'
+  codeMoteur:
+    type: string
+    example: 1NZFXE
+  codifVin:
+    type: string
+    example: JTDKB20U703189326
+  consExurb:
+    type: string
+    example: '4.2'
+  consMixte:
+    type: string
+    example: '4.3'
+  consUrb:
+    type: string
+    example: '5.0'
+  couleurVehic:
+    type: string
+    example: GRIS
+  cylindree:
+    type: string
+    example: '1497'
+  date1erCir:
+    type: string
+    format: date-time
+    example: '2006-11-02 00:00:00'
+  dateDCG:
+    type: string
+    format: date-time
+    example: '2011-07-05 00:00:00'
+  depollution:
+    type: string
+    example: NON
+  empat:
+    type: string
+    example: '270'
+  energie:
+    type: string
+    example: ESS+ELEC HNR
+  genreV:
+    type: string
+    example: VP
+  genreVCG:
+    type: string
+    example: VP
+  hauteur:
+    type: string
+    example: '149'
+  immatSiv:
+    type: string
+    example: BR254AQ
+  largeur:
+    type: string
+    example: '173'
+  longueur:
+    type: string
+    example: '445'
+  marque:
+    type: string
+    example: TOYOTA
+  marqueCarros:
+    type: string
+    example: TOYOTA
+  modeInject:
+    type: string
+    example: AUTR. CARBURATIONS
+  modele:
+    type: string
+    example: PRIUS
+  modeleEtude:
+    type: string
+    example: PRIUS
+  modelePrf:
+    type: string
+    example: PRIUS
+  nSerie:
+    type: string
+    example: 03189326
+  nSiren:
+    type: string
+    example: '000000000'
+  nbCylind:
+    type: string
+    example: '4'
+  nbPlAss:
+    type: string
+    example: '5'
+  nbPortes:
+    type: string
+    example: '5'
+  nbSoupape:
+    type: string
+    example: '4'
+  nbVitesse:
+    type: string
+    example: '6'
+  nbVolume:
+    type: string
+    example: '1'
+  poidsVide:
+    type: string
+    example: '1300'
+  prixVehic:
+    type: string
+    example: '27475'
+  propulsion:
+    type: string
+    example: AVANT
+  ptr:
+    type: string
+    example: '1725'
+  ptrPrf:
+    type: string
+    example: ''
+  puisCh:
+    type: string
+    example: '77'
+  puisFisc:
+    type: string
+    example: '4'
+  puisKw:
+    type: string
+    example: '57'
+  tpBoiteVit:
+    type: string
+    example: VARIAT.ME
+  turboCompr:
+    type: string
+    example: NON TURBO
+  type:
+    type: string
+    example: MJT9162TE537
+  typeVarVersPrf:
+    type: string
+    example: HW2NHW20(E)NHW20L-AHEEBW(1C)
+  typeVinCG:
+    type: string
+    example: KB20U7
+  version:
+    type: string
+    example: '1.5'
+  pneus:
+    type: object
+    properties:
+      Dimension:
+        type: string
+        example: 195/55 R16 87 V
+required:
+  - carrosserie
+  - carrosserieCG
+  - co2
+  - codeMoteur
+  - codifVin
+  - consExurb
+  - consMixte
+  - consUrb
+  - couleurVehic
+  - cylindree
+  - date1erCir
+  - dateDCG
+  - depollution
+  - empat
+  - energie
+  - genreV
+  - genreVCG
+  - hauteur
+  - immatSiv
+  - largeur
+  - longueur
+  - marque
+  - marqueCarros
+  - modeInject
+  - modele
+  - modeleEtude
+  - modelePrf
+  - nSerie
+  - nSiren
+  - nbCylind
+  - nbPlAss
+  - nbPortes
+  - nbSoupape
+  - nbVitesse
+  - nbVolume
+  - poidsVide
+  - prixVehic
+  - propulsion
+  - ptr
+  - ptrPrf
+  - puisCh
+  - puisFisc
+  - puisKw
+  - tpBoiteVit
+  - turboCompr
+  - type
+  - typeVarVersPrf
+  - typeVinCG
+  - version

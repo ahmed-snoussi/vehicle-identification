@@ -1,2 +1,2 @@
 apiDefinitions:
-  main: openapi.json
+  main: openapi.yaml
