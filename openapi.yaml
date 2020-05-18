@@ -1,7 +1,7 @@
 openapi: 3.0.1
 info:
   title: Vehicle identification
-  description: The vehicle identification service offers four ways to identify a vehicle &colon;  `REGISTRATION` number, `VIN` code, `TYPEMINE` or `CNIT`.
+  description: The vehicle identification API is a RESTful API. It offers four ways to identify a vehicle &colon;  `REGISTRATION` number, `VIN` code, `TYPEMINE` or `CNIT`. In addition to this documentation, we also provide an OpenAPI 3 "yaml" file describing the API.
   version: 1.0.0
 servers:
   - url: "{protocol}://{environment}:{port}"
