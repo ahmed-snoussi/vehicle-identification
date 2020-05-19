@@ -149,8 +149,7 @@ components:
             read: Grant read-only access to vehicles data
   examples:
     sivinTechnicalData:
-      value:
-        "$ref": "./sivinTechnicalDataExample.yaml"
+      "$ref": "./sivinTechnicalDataExample.yaml"
 security:
   - openId:
       - read
